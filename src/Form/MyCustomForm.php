@@ -55,7 +55,7 @@ class MyCustomForm extends FormBase {
       '#maxlength' => 64,
       '#size' => 64,
       '#weight' => '0',
-      "#default" => 'Agurchand',
+      "#default_value" => 'Agurchand',
       '#required' => TRUE
     ];
     $form['email'] = [
