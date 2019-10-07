@@ -70,34 +70,6 @@ class MyClassTest extends UnitTestCase {
 	}
 	
 	/**
-	 * @covers Drupal\mymodule\MyClass::my_array_range
-	 * assertEquals(); for Array
-	 */
-	function testMymodule_array_range_equals() {
-		
-		//random array of 1 to 5
-		$arr_range_one = $this->myclass->my_array_range();
-		$arr_range_two = $this->myclass->my_array_range();
-
-		$this->assertEquals($arr_range_one, $arr_range_two);
-
-	}
-
-	/**
-	 * @covers Drupal\mymodule\MyClass::my_array_range
-	 * assertNotEquals(); for Array
-	 */
-	function testMymodule_array_range_not_equals() {
-		
-		//random array of 1 to 5
-		$arr_range_one = $this->myclass->my_array_range(true);
-		$arr_range_two = $this->myclass->my_array_range(true);
-
-		$this->assertNotEquals($arr_range_one, $arr_range_two);
-
-	}
-
-	/**
 	 * @covers Drupal\mymodule\Order::process
 	 */
 	function testMymodule_order_mocking() {

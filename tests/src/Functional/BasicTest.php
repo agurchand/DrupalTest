@@ -3,7 +3,6 @@
 namespace Drupal\Tests\mymodule\Functional;
 
 use Drupal\Tests\BrowserTestBase;
-use Drupal\Tests\system\Functional\Form;
 
 /**
  * Test basic functionality of My Module.
@@ -25,7 +24,7 @@ class BasicTest extends BrowserTestBase {
    * {@inheritdoc}
    */
   public static $modules = [
-    // This custom module.
+    // load required modules
     'node',
     'mymodule',
   ];
@@ -51,17 +50,17 @@ class BasicTest extends BrowserTestBase {
       'administer content types'
     ));
 
+    // Login.
+    $this->drupalLogin($this->user);
+    //access the page
+    $this->drupalGet('node/add/article');
+
   }
 
   /**
    * Tests that the Article form page can be reached.
    */
   public function testArticleFormPageExists() {
-    // Login.
-    $this->drupalLogin($this->user);
-
-    // Generator test:
-    $this->drupalGet('node/add/article');
     $this->assertSession()->statusCodeEquals(200);
   }
 
@@ -69,15 +68,14 @@ class BasicTest extends BrowserTestBase {
    * Tests that the Article page has a title field.
    */
   public function testArticleTitleFieldExists() {
-    // Login.
-    $this->assertSession()->fieldExists('title');    
+    $this->assertSession()->fieldExists('Title');
   }
 
   /**
    * Tests that the Article title field has value.
    */
   public function testArticleTitleFieldHasValue() {
-    $this->assertSession()->fieldValueEquals('title', 'Admin');
+    $this->assertSession()->fieldValueEquals('Title', 'Non-Admin');
   }
 
 }

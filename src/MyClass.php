@@ -9,13 +9,8 @@ class MyClass {
 		return $str;
 	}
 
-	public function my_array_range($shuffle = false) {
+	public function my_array_range() {
 		$rand_arr = range(1, 5);
-
-		if($shuffle) {
-			shuffle($rand_arr);
-		}
-		
 		return $rand_arr;
 	}
 	
