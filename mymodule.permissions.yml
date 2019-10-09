@@ -1,0 +1,3 @@
+administer mycustomform:
+  title: 'This is my custom form permission'
+  description: 'A custom form permission for your.'
