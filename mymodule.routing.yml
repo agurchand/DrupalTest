@@ -4,4 +4,4 @@ mymodule.my_custom_form:
     _form: '\Drupal\mymodule\Form\MyCustomForm'
     _title: 'My Custom Form'
   requirements:
-    _access: 'TRUE'
+    _permission: 'administer mycustomform'

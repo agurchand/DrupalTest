@@ -17,7 +17,7 @@ class MyCustomFormTest extends BrowserTestBase {
    */
   public static $modules = [
     // load required modules
-    'node',
+    'user',
     'mymodule'
   ];
 
@@ -52,21 +52,21 @@ class MyCustomFormTest extends BrowserTestBase {
   /**
    * Tests that the MyCustoMForm page can be reached.
    */
-  public function testArticleFormPageExists() {
+  public function testCustomFormPageExists() {
     $this->assertSession()->statusCodeEquals(200);
   }
 
   /**
    * Tests that the MyCustoMForm has a field "Select Country".
    */
-  public function testArticleTitleFieldExists() {
+  public function testCustomFormFieldExists() {
     $this->assertSession()->fieldExists('Select State');
   }
 
   /**
    * Tests that the MyCustoMForm "Select Country" field has values.
    */
-  public function testArticleTitleFieldHasValue() {
+  public function testCustomFormFieldHasValue() {
     $this->assertSession()->fieldValueEquals('Select State', 'tn');
   }
 
