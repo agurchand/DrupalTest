@@ -17,8 +17,17 @@ class MyCustomFormTest extends BrowserTestBase {
    */
   public static $modules = [
     // load required modules
-    'mymodule',
+    'node',
+    'mymodule'
   ];
+
+  /**
+   * A simple user.
+   *
+   * @var \Drupal\user\Entity\User
+   */
+  private $user;
+
 
   /**
    * {@inheritdoc}
@@ -26,6 +35,14 @@ class MyCustomFormTest extends BrowserTestBase {
   protected function setUp() {
     // Make sure to complete the normal setup steps first.
     parent::setUp();
+
+    //create an user
+    $this->user = $this->drupalCreateUser(array(
+      'administer mycustomform'
+    ));
+
+    // Login.
+    $this->drupalLogin($this->user);
 
     //access the page
     $this->drupalGet('my-custom-form');
